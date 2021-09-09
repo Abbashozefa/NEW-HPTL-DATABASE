@@ -13,12 +13,23 @@ print(e1)
 
 
 def receptionist():
-            
-                
-                Button(m,text='1.NEW PATIENT').grid(row=5)
-                Button(m,text='2.ROUTINE CHECKUP PATIENT DETAILS ENTRY').grid(row=6)
-                Button(m,text='3.VIEW PATIENT DETAILS').grid(row=7)
-                Button(m,text='4.DELETE RECORD').grid(row=8)
+                def newp():
+                    pass
+
+                def rcpde():
+                    pass
+
+
+                def vpd():
+                    pass
+
+                def delre():
+                    pass
+
+                Button(m,text='1.NEW PATIENT',command= newp).grid(row=5)
+                Button(m,text='2.ROUTINE CHECKUP PATIENT DETAILS ENTRY',command=rcpde).grid(row=6)
+                Button(m,text='3.VIEW PATIENT DETAILS',command=vpd).grid(row=7)
+                Button(m,text='4.DELETE RECORD',command= delre).grid(row=8)
                 Button(m,text='5.GO BACK').grid(row=9)
                
                             
@@ -39,9 +50,20 @@ def receptionist():
                     
                
 def general():
-                Button(m,text='1.UPDATE PATIENTS EYE POWER').grid(row=5)
-                Button(m,text='2.STATISTICS OF PATIENT').grid(row=6)
-                Button(m,text='3.DELETE RECORD').grid(row=7)
+                def upep():
+                    pass
+
+                def sop():
+                    pass
+
+
+                def dr():
+                    pass
+
+               
+                Button(m,text='1.UPDATE PATIENTS EYE POWER',command=upep).grid(row=5)
+                Button(m,text='2.STATISTICS OF PATIENT',command=sop).grid(row=6)
+                Button(m,text='3.DELETE RECORD',command=dr).grid(row=7)
                 Button(m,text='4.GO BACK').grid(row=8)
                 
                 print('1.UPDATE PATIENTS EYE POWER')
@@ -58,9 +80,19 @@ def general():
                     
                 
 def doctor():
-                Button(m,text='1.CHECK COMPLETE RECORD').grid(row=5)
-                Button(m,text='2.DELETE RECORD').grid(row=6)
-                Button(m,text='3.GIVE PRESCRIPTION').grid(row=7)
+                def ccr():
+                    pass
+
+                def delr():
+                    pass
+
+
+                def givpre():
+                    pass
+
+                Button(m,text='1.CHECK COMPLETE RECORD',command=ccr).grid(row=5)
+                Button(m,text='2.DELETE RECORD',command=delr).grid(row=6)
+                Button(m,text='3.GIVE PRESCRIPTION',command=givpre).grid(row=7)
                 Button(m,text='4.GO BACK').grid(row=8)
                 print('1.CHECK COMPLETE RECORD')
                 print('2.DELETE RECORD')
