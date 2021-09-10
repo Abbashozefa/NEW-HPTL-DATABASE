@@ -4,11 +4,15 @@ conn=pymysql.connect(host='localhost',user='root',password='yellowyellow',databa
 a=conn.cursor()
 m=Tk()
 m.title('HOSPITAL DATABASE')
-e=Entry(m)
-e.grid(row=0)
+def ets():
+    E1=e.get
+    print(E1)
 
-e1=e.get()
-print(e1)
+e=Entry(m).grid(row=0)
+Button(m,text="yes",command=ets).grid(row=1)
+
+
+
 
 
 
