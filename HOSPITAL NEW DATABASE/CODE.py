@@ -84,12 +84,8 @@ def receptionist():
                 Button(m,text='3.VIEW PATIENT DETAILS',command=vpd).grid(row=7)
                 Button(m,text='4.DELETE RECORD',command= delre).grid(row=8)
                 Button(m,text='5.GO BACK',command=receptionist).grid(row=9)          
-                                    
-                                                                                                                            
-              
-                 
-                  
-               
+                                
+                                                                                                                       
 def general():
                 def upep():
                     pass
@@ -107,15 +103,9 @@ def general():
                 Button(m,text='3.DELETE RECORD',command=dr).grid(row=7)
                 Button(m,text='4.GO BACK').grid(row=8)
                 
-               
+                            
+                                                           
                       
-                        
-                    
-               
-               
-                    
-                    
-                
 def doctor():
                 def ccr():
                     pass
