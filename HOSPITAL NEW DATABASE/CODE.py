@@ -1,5 +1,6 @@
 from tkinter import *
 import pymysql
+import datetime
 conn=pymysql.connect(host='localhost',user='root',password='yellowyellow',database='EYEHOSPITAL')
 a=conn.cursor()
 m=Tk()
@@ -17,18 +18,60 @@ Button(m,text="yes",command=ets).grid(row=1)
 
 
 def receptionist():
-                def newp():
+                def send():
                     pass
+                def newp():
+
+                    Label(m,text='PATIENT ID').grid(row=7)
+                    user=Entry(m).grid(row=7,column=1)
+                    Label(m,text='Enter PATIENT NAME:').grid(row=8)
+                    name=Entry(m).grid(row=8,column=1)
+                    Label(m,text='Enter PATIENT AGE:').grid(row=9)
+                    age=Entry(m).grid(row=9,column=1)
+                    Label(m,text='Enter CONSULTING DOCTOR:').grid(row=10)
+                    doc=Entry(m).grid(row=10,column=1)
+                    G= str(datetime.date.today())
+                    
+                    
+                    
+                    
+                    
+                    
+                    Button(m,text='PATIENT ENTRY DONE',command=send)
 
                 def rcpde():
-                    pass
+                    Label(m,text='PATIENT ID').grid(row=7)
+                    user=Entry(m).grid(row=7,column=1)
+                    Label(m,text='Enter PATIENT NAME:').grid(row=8)
+                    name=Entry(m).grid(row=8,column=1)
+                    Label(m,text='Enter PATIENT AGE:').grid(row=9)
+                    age=Entry(m).grid(row=9,column=1)
+                    Label(m,text='Enter CONSULTING DOCTOR:').grid(row=10)
+                    doc=Entry(m).grid(row=10,column=1)
+                    G= str(datetime.date.today())
 
 
                 def vpd():
-                    pass
+                    Label(m,text='PATIENT ID').grid(row=7)
+                    user=Entry(m).grid(row=7,column=1)
+                    Label(m,text='Enter PATIENT NAME:').grid(row=8)
+                    name=Entry(m).grid(row=8,column=1)
+                    Label(m,text='Enter PATIENT AGE:').grid(row=9)
+                    age=Entry(m).grid(row=9,column=1)
+                    Label(m,text='Enter CONSULTING DOCTOR:').grid(row=10)
+                    doc=Entry(m).grid(row=10,column=1)
+                    G= str(datetime.date.today())
 
                 def delre():
-                    pass
+                    Label(m,text='PATIENT ID').grid(row=7)
+                    user=Entry(m).grid(row=7,column=1)
+                    Label(m,text='Enter PATIENT NAME:').grid(row=8)
+                    name=Entry(m).grid(row=8,column=1)
+                    Label(m,text='Enter PATIENT AGE:').grid(row=9)
+                    age=Entry(m).grid(row=9,column=1)
+                    Label(m,text='Enter CONSULTING DOCTOR:').grid(row=10)
+                    doc=Entry(m).grid(row=10,column=1)
+                    G= str(datetime.date.today())
 
                 Button(m,text='1.NEW PATIENT',command= newp).grid(row=5)
                 Button(m,text='2.ROUTINE CHECKUP PATIENT DETAILS ENTRY',command=rcpde).grid(row=6)
