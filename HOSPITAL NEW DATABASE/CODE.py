@@ -1,4 +1,5 @@
 from tkinter import *
+from numpy.core.fromnumeric import var
 import pymysql
 import datetime
 import pandas as pd
@@ -7,17 +8,16 @@ a=conn.cursor()
 m=Tk()
 m.title('HOSPITAL DATABASE')
 
-user=int()
-age=int()
-name=str()
-doc=str()
-
-
-
-
-
 def receptionist():
+                user=var()
+                age=var()
+                name=var()
+                doc=var()
+
+                
                 def send():
+                    
+
                     user1=user.get()
                     name1=name.get()
                     age1=age.get()
@@ -26,7 +26,7 @@ def receptionist():
                     
                     
                 def newp():
-
+                    
                     Label(m,text='PATIENT ID').grid(row=10)
                     user=Entry(m).grid(row=10,column=1)
                     Label(m,text='Enter PATIENT NAME:').grid(row=11)
@@ -44,6 +44,7 @@ def receptionist():
                     
                     Button(m,text='PATIENT ENTRY DONE',command=send).grid(row=14,column=3)
                 def send1():
+                    
                     user1=user.get()
                     
                     age1=age.get()
@@ -51,6 +52,7 @@ def receptionist():
                     D=a.fetchall()             
                     a.execute("insert into PATIENT values("+str(user)+",'"+D[0][1]+"',"+str(age)+",'"+str(datetime.date.today())+"','"+D[0][4]+"',NULL,NULL,NULL,NULL,NULL,NULL)")
                 def rcpde():
+                    
                     Label(m,text='Enter PATIENT ID:').grid(row=15)
                     user=Entry(m).grid(row=15,column=1)
                     
@@ -60,6 +62,7 @@ def receptionist():
                     Button(m,text='DONE',command=send1).grid(row=117,column=3)
 
                 def send2():
+                   
                     user1=user.get()
                     a.execute("select PATIENT_ID  ,PATIENT_NAME,AGE,DATE_OF_LAST_VISIT,CONSULTING_DOCTOR from PATIENT where PATIENT_ID="+str(user))
                     D=a.fetchall()
@@ -73,6 +76,7 @@ def receptionist():
                     user=Entry(m).grid(row=18,column=1)
                     Button(m,text='Display',command=send2).grid(row=19,column=1)
                 def send3():
+                    
                     user1=user.get()
                     a.execute("delete from patient where PATIENT_ID="+str(user))
                 def delre():
@@ -84,7 +88,7 @@ def receptionist():
                 Button(m,text='3.VIEW PATIENT DETAILS',command=vpd).grid(row=7)
                 Button(m,text='4.DELETE RECORD',command= delre).grid(row=8)
                 Button(m,text='5.GO BACK',command=receptionist).grid(row=9)          
-                                
+                              
                                                                                                                        
 def general():
                 def upep():
@@ -122,7 +126,7 @@ def doctor():
                 Button(m,text='3.GIVE PRESCRIPTION',command=givpre).grid(row=7)
                 Button(m,text='4.GO BACK').grid(row=8)
                 
-                
+          
                 
                 
                     
