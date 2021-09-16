@@ -1,5 +1,4 @@
 from tkinter import *
-from numpy.core.fromnumeric import var
 import pymysql
 import datetime
 import pandas as pd
@@ -9,19 +8,16 @@ m=Tk()
 m.title('HOSPITAL DATABASE')
 
 def receptionist():
-                user=var()
-                age=var()
-                name=var()
-                doc=var()
+               
 
                 
-                def send():
+                def send(user2,name2,age2,doc2):
                     
 
-                    user1=user.get()
-                    name1=name.get()
-                    age1=age.get()
-                    doc1=doc.get()
+                    user1=user2.get()
+                    name1=name2.get()
+                    age1=age2.get()
+                    doc1=doc2.get()
                     a.execute("insert into PATIENT values("+str(user1)+",'"+name1+"',"+str(age1)+",'"+str(datetime.date.today())+"','"+doc1+"',NULL,NULL,NULL,NULL,NULL,NULL)")
                     
                     
@@ -42,8 +38,8 @@ def receptionist():
                     
                     
                     
-                    Button(m,text='PATIENT ENTRY DONE',command=send).grid(row=14,column=3)
-                def send1():
+                    Button(m,text='PATIENT ENTRY DONE',command=send(user,name,age,doc)).grid(row=14,column=2)
+                def send1(user,age):
                     
                     user1=user.get()
                     
@@ -58,10 +54,10 @@ def receptionist():
                     
                     
                     Label(m,text='Enter PATIENT AGE').grid(row=16)
-                    user=Entry(m).grid(row=16,column=1)
-                    Button(m,text='DONE',command=send1).grid(row=117,column=3)
+                    age=Entry(m).grid(row=16,column=1)
+                    Button(m,text='DONE',command=send1(user,age)).grid(row=117,column=3)
 
-                def send2():
+                def send2(user):
                    
                     user1=user.get()
                     a.execute("select PATIENT_ID  ,PATIENT_NAME,AGE,DATE_OF_LAST_VISIT,CONSULTING_DOCTOR from PATIENT where PATIENT_ID="+str(user))
@@ -74,14 +70,15 @@ def receptionist():
                 def vpd():
                     Label(m,text='PATIENT ID').grid(row=18)
                     user=Entry(m).grid(row=18,column=1)
-                    Button(m,text='Display',command=send2).grid(row=19,column=1)
-                def send3():
+                    Button(m,text='Display',command=send2(user)).grid(row=19,column=1)
+                def send3(user):
                     
                     user1=user.get()
                     a.execute("delete from patient where PATIENT_ID="+str(user))
                 def delre():
                     Label(m,text='Enter PATIENT ID which has to deleted:').grid(row=7)
                     user=Entry(m).grid(row=20,column=1)
+                    Button(m,text='Display',command=send3(user)).grid(row=19,column=1)
                      
                 Button(m,text='1.NEW PATIENT',command= newp).grid(row=5)
                 Button(m,text='2.ROUTINE CHECKUP PATIENT DETAILS ENTRY',command=rcpde).grid(row=6)
