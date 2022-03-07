@@ -6,18 +6,17 @@ conn=pymysql.connect(host='localhost',user='root',password='yellowyellow',databa
 a=conn.cursor()
 m=Tk()
 m.title('HOSPITAL DATABASE')
-
 def receptionist():
                
 
                 
-                def send(user2,name2,age2,doc2):
+                def send(user,name,age,doc):
                     
 
-                    user1=user2.get()
-                    name1=name2.get()
-                    age1=age2.get()
-                    doc1=doc2.get()
+                    user1=user.get()
+                    name1=name.get()
+                    age1=age.get()
+                    doc1=doc.get()
                     a.execute("insert into PATIENT values("+str(user1)+",'"+name1+"',"+str(age1)+",'"+str(datetime.date.today())+"','"+doc1+"',NULL,NULL,NULL,NULL,NULL,NULL)")
                     
                     
@@ -30,15 +29,12 @@ def receptionist():
                     Label(m,text='Enter PATIENT AGE:').grid(row=12)
                     age=Entry(m).grid(row=12,column=1)
                     Label(m,text='Enter CONSULTING DOCTOR:').grid(row=13)
-                    doc=Entry(m).grid(row=13,column=1)
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    Button(m,text='PATIENT ENTRY DONE',command=send(user,name,age,doc)).grid(row=14,column=2)
+                    doc=Entry(m).grid(row=13,column=1)             
+                                 
+                                
+                                        
+                    Button(m,text='PATIENT ENTRY DONE',command=send(user,name,age,doc)).pack()
+
                 def send1(user,age):
                     
                     user1=user.get()
@@ -49,13 +45,13 @@ def receptionist():
                     a.execute("insert into PATIENT values("+str(user)+",'"+D[0][1]+"',"+str(age)+",'"+str(datetime.date.today())+"','"+D[0][4]+"',NULL,NULL,NULL,NULL,NULL,NULL)")
                 def rcpde():
                     
-                    Label(m,text='Enter PATIENT ID:').grid(row=15)
+                    Label(m,text='Enter PATIENT ID:').grid(row=17)
                     user=Entry(m).grid(row=15,column=1)
                     
                     
                     Label(m,text='Enter PATIENT AGE').grid(row=16)
                     age=Entry(m).grid(row=16,column=1)
-                    Button(m,text='DONE',command=send1(user,age)).grid(row=117,column=3)
+                    Button(m,text='DONE',command=send1(user,age)).grid(row=17,column=3)
 
                 def send2(user):
                    
